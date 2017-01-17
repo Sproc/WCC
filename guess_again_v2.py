@@ -56,22 +56,22 @@ def play():
     # When building your program, the following line will tell you what
     # the secret_number is; this will make it easier to test the game.
     # When done, remove or comment-out this line.
-    print('TEMPORARY DEBUGGING HELPER -> The secret number is: ' + str(secret_number))
+    #print('TEMPORARY DEBUGGING HELPER -> The secret number is: ' + str(secret_number))
 
     # Print message at the start the game
-    print("\nI'm thinking of a number between 1 and 100; what do you think it is?")
+    print("\nI'm thinking of a number between 1 and 100. I will give you 5 chances to figure it out. What do you think it is?")
 
     # Get the players initial guess
                               #low
-    for guess_count in range(0,5):
+    for guess_count in [5, 4, 3, 2, 1]:
         guess = get_guess()
         if compare(guess, secret_number) == 'win':
             print('You got it! The number was ' + str(secret_number) + '. Thanks for playing!')
             break
-        elif guess_count == 4 :
+        elif guess_count == 1 :
             print('5 Guesses.  You lost!')
         else:
-            print 'Too ' + str(compare(guess,secret_number)) + '. ' + 'Guess again.'
+            print 'Too ' + str(compare(guess,secret_number)) + '. ' + str(guess_count) + ' Guesses left.  Guess again.'
 
 
 
