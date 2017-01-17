@@ -63,13 +63,13 @@ def play():
 
     # Get the players initial guess
                               #low
-    for guess_count in [5, 4, 3, 2, 1]:
+    for guess_count in [4, 3, 2, 1, 0]:
         guess = get_guess()
         if compare(guess, secret_number) == 'win':
             print('You got it! The number was ' + str(secret_number) + '. Thanks for playing!')
             break
-        elif guess_count == 1 :
-            print('5 Guesses.  You lost!')
+        elif guess_count == 0 :
+            print('That was your last chance! Sorry. You lost!')
         else:
             print 'Too ' + str(compare(guess,secret_number)) + '. ' + str(guess_count) + ' Guesses left.  Guess again.'
 
